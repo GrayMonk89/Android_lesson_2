@@ -34,6 +34,7 @@
 
         <Button
             android:id="@+id/button_one"
+            android:alpha="0.25"
             android:insetLeft="@dimen/button_inset"
             android:insetTop="@dimen/button_inset"
             android:insetRight="@dimen/button_inset"
@@ -43,6 +44,7 @@
 
         <Button
             android:id="@+id/button_two"
+            android:alpha="0.25"
             android:insetLeft="@dimen/button_inset"
             android:insetTop="@dimen/button_inset"
             android:insetRight="@dimen/button_inset"
@@ -52,6 +54,7 @@
 
         <Button
             android:id="@+id/button_three"
+            android:alpha="0.25"
             android:insetLeft="@dimen/button_inset"
             android:insetTop="@dimen/button_inset"
             android:insetRight="@dimen/button_inset"
@@ -61,6 +64,7 @@
 
         <Button
             android:id="@+id/button_minus"
+            android:alpha="0.25"
             android:insetLeft="@dimen/button_inset"
             android:insetTop="@dimen/button_inset"
             android:insetRight="@dimen/button_inset"
@@ -70,6 +74,7 @@
 
         <Button
             android:id="@+id/button_four"
+            android:alpha="0.25"
             android:insetLeft="@dimen/button_inset"
             android:insetTop="@dimen/button_inset"
             android:insetRight="@dimen/button_inset"
@@ -79,6 +84,7 @@
 
         <Button
             android:id="@+id/button_five"
+            android:alpha="0.25"
             android:insetLeft="@dimen/button_inset"
             android:insetTop="@dimen/button_inset"
             android:insetRight="@dimen/button_inset"
@@ -87,6 +93,7 @@
 
         <Button
             android:id="@+id/button_six"
+            android:alpha="0.25"
             android:insetLeft="@dimen/button_inset"
             android:insetTop="@dimen/button_inset"
             android:insetRight="@dimen/button_inset"
@@ -96,6 +103,7 @@
 
         <Button
             android:id="@+id/button_plus"
+            android:alpha="0.25"
             android:insetLeft="@dimen/button_inset"
             android:insetTop="@dimen/button_inset"
             android:insetRight="@dimen/button_inset"
@@ -105,6 +113,7 @@
 
         <Button
             android:id="@+id/button_seven"
+            android:alpha="0.25"
             android:insetLeft="@dimen/button_inset"
             android:insetTop="@dimen/button_inset"
             android:insetRight="@dimen/button_inset"
@@ -114,6 +123,7 @@
 
         <Button
             android:id="@+id/button_eight"
+            android:alpha="0.25"
             android:insetLeft="@dimen/button_inset"
             android:insetTop="@dimen/button_inset"
             android:insetRight="@dimen/button_inset"
@@ -123,6 +133,7 @@
 
         <Button
             android:id="@+id/button_nine"
+            android:alpha="0.25"
             android:insetLeft="@dimen/button_inset"
             android:insetTop="@dimen/button_inset"
             android:insetRight="@dimen/button_inset"
@@ -132,6 +143,7 @@
 
         <Button
             android:id="@+id/button_multiply"
+            android:alpha="0.25"
             android:insetLeft="@dimen/button_inset"
             android:insetTop="@dimen/button_inset"
             android:insetRight="@dimen/button_inset"
@@ -142,6 +154,7 @@
 
         <Button
             android:id="@+id/button_equals"
+            android:alpha="0.25"
             android:insetLeft="@dimen/button_inset"
             android:insetTop="@dimen/button_inset"
             android:insetRight="@dimen/button_inset"
@@ -151,6 +164,7 @@
 
         <Button
             android:id="@+id/button_zero"
+            android:alpha="0.25"
             android:insetLeft="@dimen/button_inset"
             android:insetTop="@dimen/button_inset"
             android:insetRight="@dimen/button_inset"
@@ -160,6 +174,7 @@
 
         <Button
             android:id="@+id/button_dot"
+            android:alpha="0.25"
             android:insetLeft="@dimen/button_inset"
             android:insetTop="@dimen/button_inset"
             android:insetRight="@dimen/button_inset"
@@ -170,6 +185,7 @@
 
         <Button
             android:id="@+id/button_divide"
+            android:alpha="0.25"
             android:insetLeft="@dimen/button_inset"
             android:insetTop="@dimen/button_inset"
             android:insetRight="@dimen/button_inset"
