@@ -4,21 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/image"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline1"
+        android:id="@+id/guideline_vertical_middle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="@dimen/guideline_vertical_middle_percent" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+        android:id="@+id/guideline_horizontal_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.75" />
+        app:layout_constraintGuide_percent="@dimen/guideline_horizontal_bottom_percent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="@dimen/guideline_horizontal_top_percent" />
 
     <GridLayout
         android:id="@+id/gridLayout"
@@ -27,171 +35,217 @@
         android:columnCount="4"
         android:foregroundGravity="center"
         android:rowCount="4"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toStartOf="@+id/guideline1"
-        app:layout_constraintStart_toStartOf="@+id/guideline1"
-        app:layout_constraintTop_toTopOf="@+id/guideline2">
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_middle"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_bottom">
 
         <Button
             android:id="@+id/button_one"
-            android:alpha="0.25"
-            android:insetLeft="@dimen/button_inset"
-            android:insetTop="@dimen/button_inset"
-            android:insetRight="@dimen/button_inset"
-            android:insetBottom="@dimen/button_inset"
+            android:backgroundTint="@color/button_color"
+            android:insetLeft="@dimen/button_inset_left"
+            android:insetTop="@dimen/button_inset_top"
+            android:insetRight="@dimen/button_inset_right"
+            android:insetBottom="@dimen/button_inset_bottom"
             android:text="@string/one"
+            android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
 
         <Button
             android:id="@+id/button_two"
-            android:alpha="0.25"
-            android:insetLeft="@dimen/button_inset"
-            android:insetTop="@dimen/button_inset"
-            android:insetRight="@dimen/button_inset"
-            android:insetBottom="@dimen/button_inset"
+            android:backgroundTint="@color/button_color"
+            android:insetLeft="@dimen/button_inset_left"
+            android:insetTop="@dimen/button_inset_top"
+            android:insetRight="@dimen/button_inset_right"
+            android:insetBottom="@dimen/button_inset_bottom"
             android:text="@string/two"
+            android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
 
         <Button
             android:id="@+id/button_three"
-            android:alpha="0.25"
-            android:insetLeft="@dimen/button_inset"
-            android:insetTop="@dimen/button_inset"
-            android:insetRight="@dimen/button_inset"
-            android:insetBottom="@dimen/button_inset"
+            android:backgroundTint="@color/button_color"
+            android:insetLeft="@dimen/button_inset_left"
+            android:insetTop="@dimen/button_inset_top"
+            android:insetRight="@dimen/button_inset_right"
+            android:insetBottom="@dimen/button_inset_bottom"
             android:text="@string/three"
+            android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
 
         <Button
             android:id="@+id/button_minus"
-            android:alpha="0.25"
-            android:insetLeft="@dimen/button_inset"
-            android:insetTop="@dimen/button_inset"
-            android:insetRight="@dimen/button_inset"
-            android:insetBottom="@dimen/button_inset"
+            android:backgroundTint="@color/button_color"
+            android:insetLeft="@dimen/button_inset_left"
+            android:insetTop="@dimen/button_inset_top"
+            android:insetRight="@dimen/button_inset_right"
+            android:insetBottom="@dimen/button_inset_bottom"
             android:text="@string/minus"
+            android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
 
         <Button
             android:id="@+id/button_four"
-            android:alpha="0.25"
-            android:insetLeft="@dimen/button_inset"
-            android:insetTop="@dimen/button_inset"
-            android:insetRight="@dimen/button_inset"
-            android:insetBottom="@dimen/button_inset"
+            android:backgroundTint="@color/button_color"
+            android:insetLeft="@dimen/button_inset_left"
+            android:insetTop="@dimen/button_inset_top"
+            android:insetRight="@dimen/button_inset_right"
+            android:insetBottom="@dimen/button_inset_bottom"
             android:text="@string/four"
+            android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
 
         <Button
             android:id="@+id/button_five"
-            android:alpha="0.25"
-            android:insetLeft="@dimen/button_inset"
-            android:insetTop="@dimen/button_inset"
-            android:insetRight="@dimen/button_inset"
-            android:insetBottom="@dimen/button_inset"
-            android:text="@string/five" />
+            android:backgroundTint="@color/button_color"
+            android:insetLeft="@dimen/button_inset_left"
+            android:insetTop="@dimen/button_inset_top"
+            android:insetRight="@dimen/button_inset_right"
+            android:insetBottom="@dimen/button_inset_bottom"
+            android:text="@string/five"
+            android:textColor="@color/black"
+            android:textSize="@dimen/button_text_size" />
 
         <Button
             android:id="@+id/button_six"
-            android:alpha="0.25"
-            android:insetLeft="@dimen/button_inset"
-            android:insetTop="@dimen/button_inset"
-            android:insetRight="@dimen/button_inset"
-            android:insetBottom="@dimen/button_inset"
+            android:backgroundTint="@color/button_color"
+            android:insetLeft="@dimen/button_inset_left"
+            android:insetTop="@dimen/button_inset_top"
+            android:insetRight="@dimen/button_inset_right"
+            android:insetBottom="@dimen/button_inset_bottom"
             android:text="@string/six"
+            android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
 
         <Button
             android:id="@+id/button_plus"
-            android:alpha="0.25"
-            android:insetLeft="@dimen/button_inset"
-            android:insetTop="@dimen/button_inset"
-            android:insetRight="@dimen/button_inset"
-            android:insetBottom="@dimen/button_inset"
+            android:backgroundTint="@color/button_color"
+            android:insetLeft="@dimen/button_inset_left"
+            android:insetTop="@dimen/button_inset_top"
+            android:insetRight="@dimen/button_inset_right"
+            android:insetBottom="@dimen/button_inset_bottom"
             android:text="@string/plus"
+            android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
 
         <Button
             android:id="@+id/button_seven"
-            android:alpha="0.25"
-            android:insetLeft="@dimen/button_inset"
-            android:insetTop="@dimen/button_inset"
-            android:insetRight="@dimen/button_inset"
-            android:insetBottom="@dimen/button_inset"
+            android:backgroundTint="@color/button_color"
+            android:insetLeft="@dimen/button_inset_left"
+            android:insetTop="@dimen/button_inset_top"
+            android:insetRight="@dimen/button_inset_right"
+            android:insetBottom="@dimen/button_inset_bottom"
             android:text="@string/seven"
+            android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
 
         <Button
             android:id="@+id/button_eight"
-            android:alpha="0.25"
-            android:insetLeft="@dimen/button_inset"
-            android:insetTop="@dimen/button_inset"
-            android:insetRight="@dimen/button_inset"
-            android:insetBottom="@dimen/button_inset"
+            android:backgroundTint="@color/button_color"
+            android:insetLeft="@dimen/button_inset_left"
+            android:insetTop="@dimen/button_inset_top"
+            android:insetRight="@dimen/button_inset_right"
+            android:insetBottom="@dimen/button_inset_bottom"
             android:text="@string/eight"
+            android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
 
         <Button
             android:id="@+id/button_nine"
-            android:alpha="0.25"
-            android:insetLeft="@dimen/button_inset"
-            android:insetTop="@dimen/button_inset"
-            android:insetRight="@dimen/button_inset"
-            android:insetBottom="@dimen/button_inset"
+            android:backgroundTint="@color/button_color"
+            android:insetLeft="@dimen/button_inset_left"
+            android:insetTop="@dimen/button_inset_top"
+            android:insetRight="@dimen/button_inset_right"
+            android:insetBottom="@dimen/button_inset_bottom"
             android:text="@string/nine"
+            android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
 
         <Button
             android:id="@+id/button_multiply"
-            android:alpha="0.25"
-            android:insetLeft="@dimen/button_inset"
-            android:insetTop="@dimen/button_inset"
-            android:insetRight="@dimen/button_inset"
-            android:insetBottom="@dimen/button_inset"
+            android:backgroundTint="@color/button_color"
+            android:insetLeft="@dimen/button_inset_left"
+            android:insetTop="@dimen/button_inset_top"
+            android:insetRight="@dimen/button_inset_right"
+            android:insetBottom="@dimen/button_inset_bottom"
             android:text="@string/multiply"
+            android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
 
 
         <Button
             android:id="@+id/button_equals"
-            android:alpha="0.25"
-            android:insetLeft="@dimen/button_inset"
-            android:insetTop="@dimen/button_inset"
-            android:insetRight="@dimen/button_inset"
-            android:insetBottom="@dimen/button_inset"
+            android:backgroundTint="@color/button_color"
+            android:insetLeft="@dimen/button_inset_left"
+            android:insetTop="@dimen/button_inset_top"
+            android:insetRight="@dimen/button_inset_right"
+            android:insetBottom="@dimen/button_inset_bottom"
             android:text="@string/equals"
+            android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
 
         <Button
             android:id="@+id/button_zero"
-            android:alpha="0.25"
-            android:insetLeft="@dimen/button_inset"
-            android:insetTop="@dimen/button_inset"
-            android:insetRight="@dimen/button_inset"
-            android:insetBottom="@dimen/button_inset"
+            android:backgroundTint="@color/button_color"
+            android:insetLeft="@dimen/button_inset_left"
+            android:insetTop="@dimen/button_inset_top"
+            android:insetRight="@dimen/button_inset_right"
+            android:insetBottom="@dimen/button_inset_bottom"
             android:text="@string/zero"
+            android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
 
         <Button
             android:id="@+id/button_dot"
-            android:alpha="0.25"
-            android:insetLeft="@dimen/button_inset"
-            android:insetTop="@dimen/button_inset"
-            android:insetRight="@dimen/button_inset"
-            android:insetBottom="@dimen/button_inset"
+            android:backgroundTint="@color/button_color"
+            android:insetLeft="@dimen/button_inset_left"
+            android:insetTop="@dimen/button_inset_top"
+            android:insetRight="@dimen/button_inset_right"
+            android:insetBottom="@dimen/button_inset_bottom"
             android:text="@string/dot"
+            android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
-
 
         <Button
             android:id="@+id/button_divide"
-            android:alpha="0.25"
-            android:insetLeft="@dimen/button_inset"
-            android:insetTop="@dimen/button_inset"
-            android:insetRight="@dimen/button_inset"
-            android:insetBottom="@dimen/button_inset"
+            android:backgroundTint="@color/button_color"
+            android:insetLeft="@dimen/button_inset_left"
+            android:insetTop="@dimen/button_inset_top"
+            android:insetRight="@dimen/button_inset_right"
+            android:insetBottom="@dimen/button_inset_bottom"
             android:text="@string/divide"
+            android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
 
     </GridLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="end"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_top"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_middle"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_top" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/button_color"
+        android:insetLeft="@dimen/button_inset_left"
+        android:insetTop="@dimen/button_inset_top"
+        android:insetRight="@dimen/button_inset_right"
+        android:insetBottom="@dimen/button_inset_bottom"
+        android:text="@string/clear"
+        android:textColor="@color/black"
+        android:textSize="@dimen/button_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_middle"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

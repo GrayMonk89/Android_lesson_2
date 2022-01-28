@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="button_inset">5dp</dimen>
-    <dimen name="button_text_size">17sp</dimen>
+    <dimen name="button_inset_left">5dp</dimen>
+    <dimen name="button_inset_top">5dp</dimen>
+    <dimen name="button_inset_right">5dp</dimen>
+    <dimen name="button_inset_bottom">5dp</dimen>
+    <dimen name="button_text_size">15sp</dimen>
+    <dimen name="button_alpha">0.35</dimen>
+    <dimen name="guideline_horizontal_top_percent">0.25</dimen>
+    <dimen name="guideline_horizontal_bottom_percent">0.65</dimen>
+    <dimen name="guideline_vertical_middle_percent">0.5</dimen>
+
 </resources>
