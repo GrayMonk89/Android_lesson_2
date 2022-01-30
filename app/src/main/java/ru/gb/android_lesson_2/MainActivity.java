@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button buttonMinus;
     TextView textViewInput;
     TextView textViewResult;
+    Button clearText;
     String firstOperand;
     String secondOperand;
     String currentOperation = "";
@@ -119,30 +120,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 textViewInput.append(" + ");
                 break;
             }
+            case(R.id.clear_text):{
+                textViewInput.setText("");
+                textViewResult.setText("");
+                break;
+            }
             default:{
             }
         }
     }
 
     private void createLinks(){
-        buttonOne = (Button) findViewById(R.id.button_one);
-        buttonTwo = (Button) findViewById(R.id.button_two);
-        buttonThree = (Button) findViewById(R.id.button_three);
-        buttonFour = (Button) findViewById(R.id.button_four);
-        buttonFive = (Button) findViewById(R.id.button_five);
-        buttonSix = (Button) findViewById(R.id.button_six);
-        buttonSeven = (Button) findViewById(R.id.button_seven);
-        buttonEight = (Button) findViewById(R.id.button_eight);
-        buttonNine = (Button) findViewById(R.id.button_nine);
-        buttonZero = (Button) findViewById(R.id.button_zero);
-        buttonEquals = (Button) findViewById(R.id.button_equals);
-        buttonDot = (Button) findViewById(R.id.button_dot);
-        buttonDivide = (Button) findViewById(R.id.button_divide);
-        buttonPlus = (Button) findViewById(R.id.button_plus);
-        buttonMultiply = (Button) findViewById(R.id.button_multiply);
-        buttonMinus = (Button) findViewById(R.id.button_minus);
-        textViewInput = (TextView) findViewById(R.id.textViewInput);
-        textViewResult = (TextView) findViewById(R.id.textViewResult);
+        buttonOne = findViewById(R.id.button_one);
+        buttonTwo = findViewById(R.id.button_two);
+        buttonThree = findViewById(R.id.button_three);
+        buttonFour = findViewById(R.id.button_four);
+        buttonFive = findViewById(R.id.button_five);
+        buttonSix = findViewById(R.id.button_six);
+        buttonSeven = findViewById(R.id.button_seven);
+        buttonEight = findViewById(R.id.button_eight);
+        buttonNine = findViewById(R.id.button_nine);
+        buttonZero = findViewById(R.id.button_zero);
+        buttonEquals = findViewById(R.id.button_equals);
+        buttonDot = findViewById(R.id.button_dot);
+        buttonDivide = findViewById(R.id.button_divide);
+        buttonPlus = findViewById(R.id.button_plus);
+        buttonMultiply = findViewById(R.id.button_multiply);
+        buttonMinus = findViewById(R.id.button_minus);
+        textViewInput = findViewById(R.id.textViewInput);
+        textViewResult = findViewById(R.id.textViewResult);
+        clearText = findViewById(R.id.clear_text);
     }
 
     private void setListeners(){
@@ -162,5 +169,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonPlus.setOnClickListener(this);
         buttonMultiply.setOnClickListener(this);
         buttonMinus.setOnClickListener(this);
+        clearText.setOnClickListener(this);
     }
 }

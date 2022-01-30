@@ -11,5 +11,6 @@
     <dimen name="guideline_horizontal_bottom_percent">0.65</dimen>
     <dimen name="guideline_vertical_quarter_right_percent">0.75</dimen>
     <dimen name="guideline_vertical_middle_percent">0.5</dimen>
+    <dimen name="textview_text_size">17sp</dimen>
 
 </resources>
