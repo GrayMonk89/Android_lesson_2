@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     //region Variables
     Button buttonOne;
@@ -29,10 +31,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView textViewInput;
     TextView textViewResult;
     Button clearText;
-    String firstOperand;
-    String secondOperand;
-    String currentOperation = "";
-    String nextOperation;
+    Double result = 0.0;
+    String[] subString;
+    ArrayList<String> operation = new ArrayList<>();
     //endregion
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,38 +97,74 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 textViewInput.append("0");
                 break;
             }
-            case(R.id.button_equals):{
-                textViewInput.append(" = ");
-                break;
-            }
             case(R.id.button_dot):{
-                textViewInput.append(" . ");
+                textViewInput.append(".");
                 break;
             }
             case(R.id.button_divide):{
-                textViewInput.append(" / ");
+                operation.add("/");
+                textViewInput.append("/");
                 break;
             }
             case(R.id.button_minus):{
-                textViewInput.append(" - ");
+                operation.add("-");
+                textViewInput.append("-");
                 break;
             }
             case(R.id.button_multiply):{
-                textViewInput.append(" * ");
+                operation.add("*");
+                textViewInput.append("*");
                 break;
             }
             case(R.id.button_plus):{
-                textViewInput.append(" + ");
+                operation.add("+");
+                textViewInput.append("+");
                 break;
             }
             case(R.id.clear_text):{
                 textViewInput.setText("");
                 textViewResult.setText("");
+                operation.clear();
+                result = 0.0;
+                break;
+            }
+            case(R.id.button_equals):{
+                textViewInput.append("=");
+                calculations();
                 break;
             }
             default:{
             }
         }
+    }
+
+    public void calculations() {
+
+        subString = textViewInput.getText().toString().split("[-+*/=]");
+        result = 0.0;
+        int j = 0;
+        for (int i = 0; i <= subString.length - 1; i++) {
+            if (i == 0) {
+                result += Double.parseDouble(subString[i]);
+                continue;
+            }
+            if (operation.get(j).equals("+")) {
+                result += Double.parseDouble(subString[i]);
+            }
+            if (operation.get(j).equals("-")) {
+                result -= Double.parseDouble(subString[i]);
+            }
+            if (operation.get(j).equals("*")) {
+                result *= Double.parseDouble(subString[i]);
+            }
+            if (operation.get(j).equals("/")) {
+                result /= Double.parseDouble(subString[i]);
+            }
+            if (operation.size() != 0){
+                j++;
+            }
+        }
+        textViewResult.setText(Double.toString(result));
     }
 
     private void createLinks(){
