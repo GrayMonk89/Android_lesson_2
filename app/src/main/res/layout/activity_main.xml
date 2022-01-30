@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/image"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -20,6 +19,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="@dimen/guideline_horizontal_bottom_percent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_quarter_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/guideline_vertical_quarter_left_percent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_quarter_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/guideline_vertical_quarter_right_percent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_horizontal_top"
@@ -219,19 +232,42 @@
 
     </GridLayout>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:gravity="end"
-        android:text=""
-        android:textColor="@color/black"
+        android:orientation="vertical"
+        android:background="@drawable/radius"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_top"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_middle"
-        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_top" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_quarter_right"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_quarter_left"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_top">
 
+        <TextView
+            android:id="@+id/textViewInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="end"
+            android:text=""
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_top"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_middle"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_top" />
+
+        <TextView
+            android:id="@+id/textViewResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="end"
+            android:text=""
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_top"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_middle"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_top" />
+    </LinearLayout>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

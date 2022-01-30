@@ -7,7 +7,9 @@
     <dimen name="button_text_size">15sp</dimen>
     <dimen name="button_alpha">0.35</dimen>
     <dimen name="guideline_horizontal_top_percent">0.25</dimen>
+    <dimen name="guideline_vertical_quarter_left_percent">0.25</dimen>
     <dimen name="guideline_horizontal_bottom_percent">0.65</dimen>
+    <dimen name="guideline_vertical_quarter_right_percent">0.75</dimen>
     <dimen name="guideline_vertical_middle_percent">0.5</dimen>
 
 </resources>
