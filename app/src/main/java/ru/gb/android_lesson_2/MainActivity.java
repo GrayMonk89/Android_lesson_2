@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         createLinks();
         setListeners();
     }
+
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState){
         super.onRestoreInstanceState(savedInstanceState);
         textViewInput.setText(savedInstanceState.getString("textViewInput"));
@@ -50,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-
         outState.putString("textViewInput",textViewInput.getText().toString());
         outState.putString("textViewResult",textViewResult.getText().toString());
     }
