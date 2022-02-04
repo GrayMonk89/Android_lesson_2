@@ -20,6 +20,6 @@
     <string name="clear">Clear</string>
     <string name="go">Go</string>
     <string name="theme_default">Theme Default</string>
+    <string name="theme_one">Theme One</string>
     <string name="theme_two">Theme Two</string>
-    <string name="theme_tree">Theme Tree</string>
 </resources>
