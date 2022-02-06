@@ -10,4 +10,6 @@
     <color name="button_color">#A06200EE</color>
     <color name="blue">#10B0F4</color>
     <color name="yellow">#FFEB3B</color>
+    <color name="gray">#494747</color>
+    <color name="dark_blue">#0C4E6A</color>
 </resources>
