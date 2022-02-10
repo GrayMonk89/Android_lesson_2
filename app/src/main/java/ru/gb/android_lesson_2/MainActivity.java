@@ -1,5 +1,6 @@
 package ru.gb.android_lesson_2;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView textViewInput;
     TextView textViewResult;
     Button clearText;
+    Button go;
     Double result = 0.0;
     String[] subString;
     ArrayList<String> operation = new ArrayList<>();
@@ -41,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     RadioButton radioButtonThemeTwo;
     private static final String PREF_NAME = "key_pref";
     private static final String PREF_THEME_KEY = "key_pref_theme";
+    public static int REQUEST_CODE = 999;
+    public static String KEY_INTENT_FROM_THEME_TO_MAIN = "theme";
 
     //endregion
     @Override
@@ -143,17 +148,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 calculations();
                 break;
             }
-            case (R.id.radioButton_ThemeDefault):{
+            case (R.id.radioButton_ThemeDefault): {
                 setAppTheme(R.style.ThemeDefault);
                 break;
             }
-            case (R.id.radioButton_ThemeOne):{
+            case (R.id.radioButton_ThemeOne): {
                 setAppTheme(R.style.ThemeOne);
                 break;
             }
-            case (R.id.radioButton_ThemeTwo):{
+            case (R.id.radioButton_ThemeTwo): {
                 setAppTheme(R.style.ThemeTwo);
                 break;
+            }
+            case (R.id.Go):{
+                Intent intent = new Intent(MainActivity.this,ThemeActivity.class);
+                //intent.putExtra(KEY_INTENT_FROM_MAIN_TO_SECOND,"Привет, SecondActivity! Я из MainActivity");
+                startActivityForResult(intent,REQUEST_CODE);
             }
             default: {
             }
@@ -161,7 +171,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         recreate();
     }
 
-    protected void setAppTheme(int codeStyle){
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==REQUEST_CODE&&resultCode==RESULT_OK){
+            if(data.getExtras()!=null)
+                textViewResult.setText(data.getStringExtra(KEY_INTENT_FROM_THEME_TO_MAIN));
+        }
+    }
+
+    protected void setAppTheme(int codeStyle) {
         SharedPreferences sharedPref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt(PREF_THEME_KEY, codeStyle);
@@ -170,7 +189,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private int getAppTheme() {
         SharedPreferences sharedPref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-        return sharedPref.getInt(PREF_THEME_KEY,R.style.ThemeDefault);
+        return sharedPref.getInt(PREF_THEME_KEY, R.style.ThemeDefault);
     }
 
     public void calculations() {
@@ -223,8 +242,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textViewResult = findViewById(R.id.textViewResult);
         clearText = findViewById(R.id.clear_text);
         radioButtonThemeDefault = findViewById(R.id.radioButton_ThemeDefault);
-        radioButtonThemeOne= findViewById(R.id.radioButton_ThemeOne);
-        radioButtonThemeTwo= findViewById(R.id.radioButton_ThemeTwo);
+        radioButtonThemeOne = findViewById(R.id.radioButton_ThemeOne);
+        radioButtonThemeTwo = findViewById(R.id.radioButton_ThemeTwo);
+        go = findViewById(R.id.Go);
     }
 
     private void setListeners() {
@@ -248,5 +268,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         radioButtonThemeDefault.setOnClickListener(this);
         radioButtonThemeOne.setOnClickListener(this);
         radioButtonThemeTwo.setOnClickListener(this);
+        go.setOnClickListener(this);
     }
 }

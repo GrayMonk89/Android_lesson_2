@@ -38,7 +38,7 @@
     </RadioGroup>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/Go"
+        android:id="@+id/Go_Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:insetLeft="@dimen/button_inset_left"
