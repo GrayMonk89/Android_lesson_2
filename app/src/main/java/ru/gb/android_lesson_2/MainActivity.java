@@ -160,10 +160,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 setAppTheme(R.style.ThemeTwo);
                 break;
             }
-            case (R.id.Go):{
-                Intent intent = new Intent(MainActivity.this,ThemeActivity.class);
-                //intent.putExtra(KEY_INTENT_FROM_MAIN_TO_SECOND,"Привет, SecondActivity! Я из MainActivity");
-                startActivityForResult(intent,REQUEST_CODE);
+            case (R.id.Go): {
+                Intent intent = new Intent(MainActivity.this, ThemeActivity.class);
+                startActivityForResult(intent, REQUEST_CODE);
             }
             default: {
             }
@@ -174,9 +173,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==REQUEST_CODE&&resultCode==RESULT_OK){
-            if(data.getExtras()!=null)
-                textViewResult.setText(data.getStringExtra(KEY_INTENT_FROM_THEME_TO_MAIN));
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
+            if (data.getExtras() != null) {
+                switch (data.getIntExtra(KEY_INTENT_FROM_THEME_TO_MAIN, R.style.ThemeDefault)) {
+                    case (R.style.ThemeDefault): {
+                        setAppTheme(R.style.ThemeDefault);
+                        break;
+                    }
+                    case (R.style.ThemeOne): {
+                        setAppTheme(R.style.ThemeOne);
+                        break;
+                    }
+                    case (R.style.ThemeTwo): {
+                        setAppTheme(R.style.ThemeTwo);
+                        break;
+                    }
+
+                }
+                textViewResult.setText("id темы " + data.getIntExtra(KEY_INTENT_FROM_THEME_TO_MAIN, -1));
+                recreate();
+            }
         }
     }
 
