@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setTheme(getAppTheme());
         setContentView(R.layout.activity_main);
-        createLinks();
+        initView();
         setListeners();
     }
 
@@ -202,7 +202,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textViewResult.setText(Double.toString(result));
     }
 
-    private void createLinks() {
+    private void initView() {
         buttonOne = findViewById(R.id.button_one);
         buttonTwo = findViewById(R.id.button_two);
         buttonThree = findViewById(R.id.button_three);
